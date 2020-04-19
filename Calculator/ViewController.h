@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)digits:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *displayResult;
+@property (weak, nonatomic) IBOutlet UIButton *ACchangedC;
+
+- (IBAction)orangeFunctionButtons:(UIButton *)sender;
+- (IBAction)greyFunctionButton:(UIButton *)sender;
+- (double) calculateResult:(int)operetorNum;
+- (void) removeZeroInEnd;
+- (IBAction)equalButton:(UIButton *)sender;
 
 
 @end
