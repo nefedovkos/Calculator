@@ -62,7 +62,7 @@
                                                                         </state>
                                                                         <state key="highlighted" backgroundImage="white15"/>
                                                                         <connections>
-                                                                            <action selector="greyFunctionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vhG-wf-lWO"/>
+                                                                            <action selector="functoinButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gmP-ui-Ig7"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -84,7 +84,7 @@
                                                                         </state>
                                                                         <state key="highlighted" backgroundImage="white15"/>
                                                                         <connections>
-                                                                            <action selector="greyFunctionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxP-bp-gNu"/>
+                                                                            <action selector="functoinButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KE5-mV-Vie"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -106,7 +106,7 @@
                                                                         </state>
                                                                         <state key="highlighted" backgroundImage="white15"/>
                                                                         <connections>
-                                                                            <action selector="greyFunctionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aug-I4-yrv"/>
+                                                                            <action selector="functoinButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cGZ-Km-scF"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -128,7 +128,7 @@
                                                                         </state>
                                                                         <state key="highlighted" backgroundImage="black20"/>
                                                                         <connections>
-                                                                            <action selector="orangeFunctionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WOj-9X-nhy"/>
+                                                                            <action selector="functoinButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LJ4-m9-WBU"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -221,7 +221,7 @@
                                                                         </state>
                                                                         <state key="highlighted" backgroundImage="black20"/>
                                                                         <connections>
-                                                                            <action selector="orangeFunctionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8C5-0i-SJb"/>
+                                                                            <action selector="functoinButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nRV-W8-HWE"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -314,7 +314,7 @@
                                                                         </state>
                                                                         <state key="highlighted" backgroundImage="black20"/>
                                                                         <connections>
-                                                                            <action selector="orangeFunctionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="czV-xF-yqH"/>
+                                                                            <action selector="functoinButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PFe-0g-ccY"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -407,7 +407,7 @@
                                                                         </state>
                                                                         <state key="highlighted" backgroundImage="black20"/>
                                                                         <connections>
-                                                                            <action selector="orangeFunctionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0qx-0K-SDd"/>
+                                                                            <action selector="functoinButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="No0-PD-c9E"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -486,8 +486,7 @@
                                                                                 </state>
                                                                                 <state key="highlighted" backgroundImage="black20"/>
                                                                                 <connections>
-                                                                                    <action selector="equalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bU5-Qv-GII"/>
-                                                                                    <action selector="orangeFunctionButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUn-1E-FiR"/>
+                                                                                    <action selector="functoinButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TnB-KV-DGZ"/>
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>

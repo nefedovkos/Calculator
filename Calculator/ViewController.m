@@ -15,7 +15,6 @@
 @implementation ViewController
 double firstNumber=0;
 double secondNumber=0;
-double thirdNumber=0;
 double result=0;
 bool operatorPressed=false;
 bool periodPressed=false;
@@ -28,26 +27,7 @@ int operator=0;
     // Do any additional setup after loading the view.
 }
 
-
-- (IBAction)equalButton:(UIButton *)sender {
-       
-    if(toGiveAnswer){
-        result = [self calculateResult:operator];
-        operatorPressed=false;
-        periodPressed=false;
-        toCleanDisplayForSecondValue=true;
-        operator = 18;
-    } else {
-        //result = [self calculateResult:operator];
-        operatorPressed=false;
-        periodPressed=false;
-        toCleanDisplayForSecondValue=true;
-        operator=18;
-    }
-}
-
 - (void)removeZeroInEnd{
-
     bool havePeriod=false;
     const char *charArray = [_displayResult.text UTF8String];
     int length = (int)[_displayResult.text length];
@@ -56,7 +36,6 @@ int operator=0;
             havePeriod=true;
         }
     }
-    
     if(havePeriod){
         for (int i = 0; i < [_displayResult.text length]; i++){
                     if([_displayResult.text hasSuffix:@"0"]){
@@ -73,7 +52,6 @@ int operator=0;
         }
     }
 }
-
 - (double) calculateResult:(int)operetorNum{
     double result=0;
         if (operetorNum==13){   // %
@@ -121,7 +99,6 @@ int operator=0;
     }
     return result;
 }
-
 - (IBAction)digits:(UIButton *)sender {
     _ACchangedC.titleLabel.text=@" C";
     _displayResult.adjustsFontSizeToFitWidth=true;
@@ -171,18 +148,8 @@ int operator=0;
         firstNumber=[_displayResult.text doubleValue];
     }
     isPrecentPressed=false;
-    
 }
-
-- (IBAction)greyFunctionButton:(UIButton *)sender {
-    if (sender.tag==11){    // AC
-        _displayResult.text=@"0";
-        firstNumber=0;
-        secondNumber=0;
-        operatorPressed=false;
-        periodPressed=false;
-        toGiveAnswer=false;
-    }
+- (IBAction)functoinButtons:(UIButton *)sender {
     if (sender.tag==12){   // +/-
         if(operatorPressed){
             if(secondNumber!=0){
@@ -203,25 +170,21 @@ int operator=0;
             }
         }
     }
-        if (sender.tag==13){   // %
-            
-            if(toGiveAnswer){
-                secondNumber = (firstNumber/100)*secondNumber;
-                result = [self calculateResult:operator];
-            } else {
-                if(!operatorPressed){
-                    secondNumber=1;
-                    result = [self calculateResult:13];
-                }
+    if (sender.tag==13){   // %
+        if(toGiveAnswer){
+            secondNumber = (firstNumber/100)*secondNumber;
+            result = [self calculateResult:operator];
+        } else {
+            if(!operatorPressed){
+                secondNumber=1;
+                result = [self calculateResult:13];
             }
-            operatorPressed=true;
-            periodPressed=false;
-            toCleanDisplayForSecondValue=true;
-            operator=13;
         }
-        [self removeZeroInEnd];
-}
-- (IBAction)orangeFunctionButtons:(UIButton *)sender {
+        operatorPressed=true;
+        periodPressed=false;
+        toCleanDisplayForSecondValue=true;
+        operator=13;
+    }
     if (sender.tag==14){   // /
        if(toGiveAnswer){
            result = [self calculateResult:operator];
@@ -241,13 +204,30 @@ int operator=0;
         operator=16;
     }
     if (sender.tag==17){   // +
-        
         if(toGiveAnswer){
             result = [self calculateResult:operator];
         }
         operator=17;
     }
     operatorPressed=true;
+    if (sender.tag==18){  //=
+        if(toGiveAnswer){
+            result = [self calculateResult:operator];
+            operatorPressed=false;
+            operator = 18;
+        } else {
+            //result = [self calculateResult:operator];
+            operatorPressed=false;
+            operator=18;
+        }
+    }
+    if (sender.tag==11){    // AC
+        _displayResult.text=@"0";
+        firstNumber=0;
+        secondNumber=0;
+        operatorPressed=false;
+        toGiveAnswer=false;
+    }
     periodPressed=false;
     toCleanDisplayForSecondValue=true;
     [self removeZeroInEnd];
