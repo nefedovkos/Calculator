@@ -20,6 +20,7 @@ double result=0;
 bool operatorPressed=false;
 bool periodPressed=false;
 bool toGiveAnswer=false;
+bool isPrecentPressed=false;
 bool toCleanDisplayForSecondValue=false;
 int operator=0;
 - (void)viewDidLoad {
@@ -75,7 +76,7 @@ int operator=0;
 
 - (double) calculateResult:(int)operetorNum{
     double result=0;
-    if (operetorNum==13){   // %
+        if (operetorNum==13){   // %
         result = (firstNumber/100)*secondNumber;
         toGiveAnswer=false;
         _displayResult.text=[NSString stringWithFormat:@"%f", result];
@@ -169,6 +170,8 @@ int operator=0;
         }
         firstNumber=[_displayResult.text doubleValue];
     }
+    isPrecentPressed=false;
+    
 }
 
 - (IBAction)greyFunctionButton:(UIButton *)sender {
@@ -200,16 +203,23 @@ int operator=0;
             }
         }
     }
-    if (sender.tag==13){   // %
-        if(toGiveAnswer){
-            result = [self calculateResult:13];
+        if (sender.tag==13){   // %
+            
+            if(toGiveAnswer){
+                secondNumber = (firstNumber/100)*secondNumber;
+                result = [self calculateResult:operator];
+            } else {
+                if(!operatorPressed){
+                    secondNumber=1;
+                    result = [self calculateResult:13];
+                }
+            }
+            operatorPressed=true;
+            periodPressed=false;
+            toCleanDisplayForSecondValue=true;
+            operator=13;
         }
-        operatorPressed=true;
-        periodPressed=false;
-        toCleanDisplayForSecondValue=true;
-        operator=13;
-    }
-    [self removeZeroInEnd];
+        [self removeZeroInEnd];
 }
 - (IBAction)orangeFunctionButtons:(UIButton *)sender {
     if (sender.tag==14){   // /
